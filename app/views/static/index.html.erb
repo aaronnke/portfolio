@@ -1,0 +1,133 @@
+<div class="super-container">
+  <div class="light-outer-block outer-block">
+    <div class="inner-block profile-block">
+      <%= image_tag "http://i64.tinypic.com/15ygbpg.jpg", class: "profile-photo" %>
+      <span class="profile-header">
+        Hi, I'm Aaron Ng, a ROR dev.
+      </span>
+      <span class="profile-text">
+        I've recently graduated from NEXT Academy's Webdev Bootcamp (uni, too)<br>
+        and have been learning up super basic AI. I think about backend<br>
+        algorithms quite a bit (although extremely new).
+      </span>
+      <div class="profile-link-div">
+        <span class="profile-link-text">
+          See My Projects Below
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark-outer-block outer-block">
+    <div class="inner-block checker-block">
+      <%= image_tag "http://i68.tinypic.com/vys58p.png", class: "app-photo-left" %>
+      <div class="app-content-right app-content">
+        <span class="app-header-right">
+          Checkers AI
+        </span>
+          <ul class="app-text-right"> Simple checkers game with an AI apponent:
+            <li> AI move evaluation using minimax algorithm (depth adjustable). </li>
+            <li> Board state evaluation using piece count, king count, piece exposure, piece position. Weights poorly adjusted. </li>
+            <li> Features include: king, combo, must-eat playstyle, undo </li>
+            <li> Strong enough to beat me. Of course, I'm horrible at it. </li>
+          </ul>
+        <%= button_to "Link to live app", "https://minimax-checkers.herokuapp.com", form: {target: '_blank'}, class: "app-link-right app-button", method: :get %>
+        <%= button_to "Code in Github", "https://github.com/aaronnke/checkers_v2", form: {target: '_blank'}, class: "app-github-right app-button", method: :get %>
+      </div>
+    </div>
+    <div class="duit-scroll dark-scroll scroll-button">
+      Next: Duit
+    </div>
+  </div>
+
+  <div class="light-outer-block outer-block">
+    <div class="inner-block checker-block">
+      <%= image_tag "http://i63.tinypic.com/2vd1nv8.png", class: "app-photo-right" %>
+      <div class="app-content-left app-content">
+        <span class="app-header-right">
+          Duit (Money Tracker)
+        </span>
+          <ul class="app-text-right"> Manage your income, expense, goals (savings):
+            <li> Simple data visualization to see key info at a glance. </li>
+            <li> Create budgeted income, expense, and goals to track against. </li>
+            <li> Join a group (family) to see everyone's monies. </li>
+            <li> This was a group project for NEXT's bootcamp (final week). </li>
+            <li> My role: DB design(90%), DB query(80%), calculations(70%). </li>
+            <li> Kindly check Github's README on how to test. </li>
+          </ul>
+        <%= button_to "Link to live app", "https://justduit.herokuapp.com/", form: {target: '_blank'}, class: "app-link-right app-button", method: :get %>
+        <%= button_to "Code in Github", "https://github.com/aaronnke/Duit", form: {target: '_blank'}, class: "app-github-right app-button", method: :get %>
+      </div>
+    </div>
+    <div class="airbnb-scroll light-scroll scroll-button">
+      Next: Airbnb
+    </div>
+  </div>
+
+  <div class="dark-outer-block outer-block">
+    <div class="inner-block checker-block">
+      <%= image_tag "http://i63.tinypic.com/dykit1.png", class: "app-photo-left" %>
+      <div class="app-content-right app-content">
+        <span class="app-header-right">
+          Airbnb Mock
+        </span>
+          <ul class="app-text-right"> Done in Week 6-7 of NEXT's bootcamp:
+            <li> Host and book listings. </li>
+            <li> Elasticsearch w/ Searchkiq for listings. </li>
+            <li> Filter listings by date (cannot double-book, too). </li>
+            <li> Infinite scroll for listings. </li>
+            <li> AWS and Carrierwave for image upload (profile, listing) </li>
+            <li> Kindly check Github's README on how to test. </li>
+          </ul>
+        <%= button_to "Link to live app", "https://airbnbrim.herokuapp.com/", form: {target: '_blank'}, class: "app-link-right app-button", method: :get %>
+        <%= button_to "Code in Github", "https://github.com/aaronnke/airbnb", form: {target: '_blank'}, class: "app-github-right app-button", method: :get %>
+      </div>
+    </div>
+    <div class="snake-scroll dark-scroll scroll-button">
+      Next: Snake
+    </div>
+  </div>
+
+  <div class="light-outer-block outer-block">
+    <div class="inner-block checker-block">
+      <%= image_tag "http://i64.tinypic.com/nqajcw.png", class: "app-photo-right" %>
+      <div class="app-content-left app-content">
+        <span class="app-header-right">
+          Snake (Nokia Classic)
+        </span>
+          <ul class="app-text-right"> Built in my spare time during Week 5 of NEXT:
+            <li> Snake movement using arrow keys. </li>
+            <li> Eat food to grow longer. </li>
+            <li> Superfood every 10 foods, with bonus points based on timer. </li>
+            <li> Crashing into self or walls equal death. </li>
+            <li> Restart and pause game. </li>
+          </ul>
+        <%= button_to "Link to live app", "https://nokiasnake.herokuapp.com/", form: {target: '_blank'}, class: "app-link-right app-button", method: :get %>
+        <%= button_to "Code in Github", "https://github.com/aaronnke/game_app", form: {target: '_blank'}, class: "app-github-right app-button", method: :get %>
+      </div>
+    </div>
+    <div class="contact-scroll light-scroll scroll-button">
+      Contact Me
+    </div>
+  </div>
+
+  <div class="dark-outer-block outer-block">
+    <div class="inner-block profile-block">
+      <%= image_tag "http://i64.tinypic.com/15ygbpg.jpg", class: "profile-photo" %>
+      <span class="profile-header">
+        Want to hire me?
+      </span>
+      <span class="profile-text">
+        Great! Please find my email below. I'll respond within a day.<br>
+        I can also be found on Facebook if that's preferred.<br>
+      </span>
+      <div class="contact-email-div">
+        <span class="contact-email-text">
+          aaronnke@gmail.com
+        </span>
+      </div>
+      <%= button_to "Facebook", "https://www.facebook.com/aaron.ng.940", form: {target: '_blank'}, class: "contact-fb-button", method: :get %>
+    </div>
+
+
+</div>
