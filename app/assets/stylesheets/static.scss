@@ -49,6 +49,7 @@ body {
 
   .nav-intro {
     left: 65%;
+    border-bottom: 3px solid rgb(50,200,50);
   }
 
   .nav-projects {
@@ -64,6 +65,7 @@ body {
 .outer-block {
   position: relative;
   width: 100%;
+  min-width: 1100px;
   height: 100% - $navbar-height;
   left: 0%;
   top: 0%;
@@ -72,15 +74,16 @@ body {
 
   .scroll-button {
     position: absolute;
-    left: 45%;
+    left: 46%;
     bottom: 0px;
-    width: 10%;
-    min-width: 150px;
+    width: 8%;
+    min-width: 80px;
     height: 40px;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 100%;
   }
 
   .scroll-button:hover {
@@ -105,7 +108,7 @@ body {
     position: relative;
     height: 550px;
     width: 1100px;
-    min-width: 1040px;
+    min-width: 1100px;
     margin: auto;
     color: inherit;
 
@@ -309,9 +312,4 @@ body {
     cursor: pointer;
   }
 
-}
-
-
-.checker-block {
-  .color: $white;
 }

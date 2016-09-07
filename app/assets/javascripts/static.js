@@ -1,41 +1,104 @@
 $(document).on('turbolinks:load', function() {
 
   height = window.innerHeight*0.9;
+  prevScroll = 0;
+  scrollTimer = null;
+
+  $('.nav-intro').click(function () {
+    $("html, body").animate({ scrollTop: 0 });
+    prevScroll = $(window).scrollTop();
+  })
 
   $('.profile-link-div').click(function () {
-    window.scrollTo(0, height);
+    $("html, body").animate({ scrollTop: height });
+    prevScroll = $(window).scrollTop();
   })
 
   $('.nav-projects').click(function () {
-    window.scrollTo(0, height);
-  })
-
-  $('.nav-intro').click(function () {
-    window.scrollTo(0, 0);
+    $("html, body").animate({ scrollTop: height });
+    prevScroll = $(window).scrollTop();
   })
 
   $('.nav-contact').click(function () {
-    window.scrollTo(0, height*5);
+    $("html, body").animate({ scrollTop: height*5 });
+    prevScroll = $(window).scrollTop();
   })
 
   $('.duit-scroll').click(function () {
-    window.scrollTo(0, height*2);
+    $("html, body").animate({ scrollTop: height*2 });
+    prevScroll = $(window).scrollTop();
   })
 
   $('.airbnb-scroll').click(function () {
-    window.scrollTo(0, height*3);
+    $("html, body").animate({ scrollTop: height*3 });
+    prevScroll = $(window).scrollTop();
   })
 
   $('.snake-scroll').click(function () {
-    window.scrollTo(0, height*4);
+    $("html, body").animate({ scrollTop: height*4 });
+    prevScroll = $(window).scrollTop();
   })
 
   $('.contact-scroll').click(function () {
-    window.scrollTo(0, height*5);
+    $("html, body").animate({ scrollTop: height*5 });
+    prevScroll = $(window).scrollTop();
   })
 
   $(window).scroll(function() {
-    if ($(window).scrollTop() >= height*5) {
+    if (scrollTimer) {
+        clearTimeout(scrollTimer);   // clear any previous pending timer
+    }
+    scrollTimer = setTimeout(handleScroll, 50);   // set new timer
+  });
+
+  function handleScroll() {
+    scrollTimer = null;
+    var currentScroll = $(window).scrollTop();
+
+    if (currentScroll > 0 && currentScroll < height) {
+      if (currentScroll > prevScroll) {
+        $("html, body").animate({ scrollTop: height });
+      }
+      else {
+        $("html, body").animate({ scrollTop: 0 });
+      }
+    }
+    else if (currentScroll > height && currentScroll < height*2) {
+      if (currentScroll > prevScroll) {
+        $("html, body").animate({ scrollTop: height*2 });
+      }
+      else {
+        $("html, body").animate({ scrollTop: height*1 });
+      }
+    }
+    else if (currentScroll > height*2 && currentScroll < height*3) {
+      if (currentScroll > prevScroll) {
+        $("html, body").animate({ scrollTop: height*3 });
+      }
+      else {
+        $("html, body").animate({ scrollTop: height*2 });
+      }
+    }
+    else if (currentScroll > height*3 && currentScroll < height*4) {
+      if (currentScroll > prevScroll) {
+        $("html, body").animate({ scrollTop: height*4 });
+      }
+      else {
+        $("html, body").animate({ scrollTop: height*3 });
+      }
+    }
+    else if (currentScroll > height*4 && currentScroll < height*5) {
+      if (currentScroll > prevScroll) {
+        $("html, body").animate({ scrollTop: height*5 });
+      }
+      else {
+        $("html, body").animate({ scrollTop: height*4 });
+      }
+    }
+
+    prevScroll = $(window).scrollTop();
+
+    if (prevScroll == height*5) {
       $('.nav-contact').css({
         'border-bottom': '3px solid rgb(50,200,50)'
       });
@@ -46,28 +109,28 @@ $(document).on('turbolinks:load', function() {
         'border-bottom': '0'
       });
     }
-    else if ($(window).scrollTop() >= height) {
+    else if (prevScroll == 0) {
       $('.nav-projects').css({
-        'border-bottom': '3px solid rgb(50,200,50)'
+        'border-bottom': '0'
       });
       $('.nav-contact').css({
         'border-bottom': '0'
       });
       $('.nav-intro').css({
-        'border-bottom': '0'
+        'border-bottom': '3px solid rgb(50,200,50)'
       });
     }
     else {
-      $('.nav-intro').css({
-        'border-bottom': '3px solid rgb(50,200,50)'
-      });
       $('.nav-projects').css({
-        'border-bottom': '0'
+        'border-bottom': '3px solid rgb(50,200,50)'
       });
       $('.nav-contact').css({
         'border-bottom': '0'
       });
+      $('.nav-intro').css({
+        'border-bottom': '0'
+      });
     }
-  })
+  }
 
 });
