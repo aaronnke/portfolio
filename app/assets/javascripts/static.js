@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function() {
 
   height = window.innerHeight*0.9;
   prevScroll = 0;
-  scrollTimer = null;
 
   $('.nav-intro').click(function () {
     $("html, body").animate({ scrollTop: 0 });
@@ -44,18 +43,21 @@ $(document).on('turbolinks:load', function() {
     prevScroll = $(window).scrollTop();
   })
 
-  $(window).scroll(function() {
+
+  var scrollTimer = null;
+
+  $(window).scroll(function () {
     if (scrollTimer) {
         clearTimeout(scrollTimer);   // clear any previous pending timer
     }
-    scrollTimer = setTimeout(handleScroll, 50);   // set new timer
+    scrollTimer = setTimeout(handleScroll, 100);   // set new timer
   });
 
   function handleScroll() {
     scrollTimer = null;
     var currentScroll = $(window).scrollTop();
 
-    if (currentScroll > 0 && currentScroll < height) {
+    if (currentScroll > 5 && currentScroll < height - 5) {
       if (currentScroll > prevScroll) {
         $("html, body").animate({ scrollTop: height });
       }
@@ -63,7 +65,7 @@ $(document).on('turbolinks:load', function() {
         $("html, body").animate({ scrollTop: 0 });
       }
     }
-    else if (currentScroll > height && currentScroll < height*2) {
+    else if (currentScroll > height + 5 && currentScroll < height*2 - 5) {
       if (currentScroll > prevScroll) {
         $("html, body").animate({ scrollTop: height*2 });
       }
@@ -71,7 +73,7 @@ $(document).on('turbolinks:load', function() {
         $("html, body").animate({ scrollTop: height*1 });
       }
     }
-    else if (currentScroll > height*2 && currentScroll < height*3) {
+    else if (currentScroll > height*2 + 5 && currentScroll < height*3 - 5) {
       if (currentScroll > prevScroll) {
         $("html, body").animate({ scrollTop: height*3 });
       }
@@ -79,7 +81,7 @@ $(document).on('turbolinks:load', function() {
         $("html, body").animate({ scrollTop: height*2 });
       }
     }
-    else if (currentScroll > height*3 && currentScroll < height*4) {
+    else if (currentScroll > height*3 + 5 && currentScroll < height*4 - 5) {
       if (currentScroll > prevScroll) {
         $("html, body").animate({ scrollTop: height*4 });
       }
@@ -87,7 +89,7 @@ $(document).on('turbolinks:load', function() {
         $("html, body").animate({ scrollTop: height*3 });
       }
     }
-    else if (currentScroll > height*4 && currentScroll < height*5) {
+    else if (currentScroll > height*4 + 5 && currentScroll < height*5 - 5) {
       if (currentScroll > prevScroll) {
         $("html, body").animate({ scrollTop: height*5 });
       }
@@ -98,7 +100,7 @@ $(document).on('turbolinks:load', function() {
 
     prevScroll = $(window).scrollTop();
 
-    if (prevScroll == height*5) {
+    if (prevScroll >= height*5 - 5) {
       $('.nav-contact').css({
         'border-bottom': '3px solid rgb(50,200,50)'
       });
@@ -110,6 +112,10 @@ $(document).on('turbolinks:load', function() {
       });
     }
     else if (prevScroll == 0) {
+      $('.navbar').css({
+        'border-bottom': '0'
+      });
+
       $('.nav-projects').css({
         'border-bottom': '0'
       });
@@ -121,6 +127,10 @@ $(document).on('turbolinks:load', function() {
       });
     }
     else {
+      $('.navbar').css({
+        'border-bottom': '1px solid rgb(45,45,60)'
+      });
+
       $('.nav-projects').css({
         'border-bottom': '3px solid rgb(50,200,50)'
       });
